@@ -1,5 +1,7 @@
+
 #ifndef VECTOR_HPP_
 #define VECTOR_HPP_
+
 
 //=======================================================
 // Class: Vector
