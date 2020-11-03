@@ -38,7 +38,7 @@ Message* MsgQueue::receive(unsigned long& id)
 		pthread_cond_wait(&rxCond, &mutex);
 	}
 
-    // Tag ny data fra
+    // Tag ny data fra queue
 	id = container.front().id_;
 	Message* msg = container.front().msg_;
 
@@ -55,6 +55,7 @@ Message* MsgQueue::receive(unsigned long& id)
 MsgQueue::~MsgQueue()
 {
     // Nedlæg mutex og conditions
+	delete []&container;
 	pthread_mutex_destroy(&mutex);
 	pthread_cond_destroy(&rxCond);
 	pthread_cond_destroy(&txCond);

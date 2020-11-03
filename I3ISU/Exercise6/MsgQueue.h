@@ -13,7 +13,6 @@ struct msgEvent
     Message* msg_;
 };
 
-using namespace std;
 
 class MsgQueue
 {
